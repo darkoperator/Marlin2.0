@@ -33,13 +33,13 @@
 #define SK_GO_USING_TITAN     3
 
 // Use one of the above defininition to change extruder setup
-#define SK_MODEL              SK_GO_USING_TITAN
-#define SK_Z_HEIGHT           300     // SK-Mini: 250 or 300. SK-Go: 300 or 350.
+#define SK_MODEL              SK_GO_USING_BMG
+#define SK_Z_HEIGHT           350     // SK-Mini: 250 or 300. SK-Go: 300 or 350.
 
 // Comment it for direct extrusion. Uncomment for bowden setup.
 // #define BOWDEN_EXTRUSION
 
-#define SK_REVERSE_CABLE_SEQUENCE  false
+#define SK_REVERSE_CABLE_SEQUENCE  true
 #define SK_Z_BELT_EXP              false
 
 //----------------------------------------------------------
@@ -151,7 +151,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -435,7 +435,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -1152,7 +1152,7 @@
   #endif
 
   #if (SK_MODEL % 2 == 0) // BMG
-    #define INVERT_E0_DIR false
+    #define INVERT_E0_DIR true
   #else
     #define INVERT_E0_DIR true
   #endif
@@ -1447,7 +1447,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
@@ -1491,7 +1491,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (100*60)
+#define HOMING_FEEDRATE_XY (50*60)
 #define HOMING_FEEDRATE_Z  (30*60)
 
 // Validate that endstops are triggered on homing moves
